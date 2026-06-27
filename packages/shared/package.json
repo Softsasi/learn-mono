@@ -1,0 +1,9 @@
+{
+  "name": "@my-app/shared",
+  "private": true,
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0"
+}
