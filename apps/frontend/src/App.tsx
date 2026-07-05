@@ -1,53 +1,25 @@
-import { useEffect, useState } from 'react';
-
-type State = 'idle' | 'loading' | 'success' | 'error';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import RootLayout from './layout/RootLayout';
+import HomePage from './page/HomePage';
+import LoginPage from './page/LoginPage';
+import NotFound from './page/NotFound';
+import RegisterPage from './page/RegisterPage';
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [state, setState] = useState<State>('idle');
-
-  useEffect(() => {
-    const fetchTodos = async () => {
-      try {
-        setState('loading');
-
-        const response = await fetch('http://localhost:8080/todosd');
-
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        setTodos(data);
-        setState('success');
-      } catch (err) {
-        console.error(err);
-        setState('error');
-      }
-    };
-
-    fetchTodos();
-
-    return () => {
-      setTodos([]);
-    };
-  }, []);
-
   return (
-    <div>
-      <h1>Todos</h1>
-      {state === 'loading' && <p>Loading...</p>}
-      {state === 'error' && <p>Error fetching todos.</p>}
+    <main>
+      <BrowserRouter>
+        <RootLayout>
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
 
-      {state === 'success' && (
-        <ul>
-          {todos.map((todo: any) => (
-            <li key={todo.id}>{todo.title}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </RootLayout>
+      </BrowserRouter>
+    </main>
   );
 };
 

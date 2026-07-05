@@ -18,6 +18,19 @@ app.get('/todos', (req, res) => {
   res.json(todos);
 });
 
+app.post('/register', (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Email and password are required' });
+  }
+
+  // Here you would typically save the user to a database
+  console.log(`Registered user: ${email}`);
+
+  res.status(201).json({ message: 'User registered successfully' });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
