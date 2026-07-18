@@ -1,0 +1,42 @@
+[
+  {
+    "email": "xotulo@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$LiQzF2/bFvDBnhDTT2kf7w$varZmGoGIxcFiMbsF49ul9L2zyD6ERtg2rlZeLSBpas"
+  },
+  {
+    "email": "zuqyqu@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$kGv7QLApuwvRDP/VEtZpTQ$ZDomk+8+7yHYKgIWJsRtW0sAFTpDkUleKUR0F8hXDKg"
+  },
+  {
+    "email": "dytig@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$sX3XokK4PBYsvZMbzLnJWQ$KcE33sx/lBIC0T0T33LS7U6uFVjMj8FfRseId+vzHJs"
+  },
+  {
+    "email": "wikacy@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$CeQ41FHorFvd9GtAzL88mA$88Lq6ad8KXHUeo3iEWJK6kwO5HSiutJ+b88O8U2j+J8"
+  },
+  {
+    "email": "wesece@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$D4swxhC9kDVrOW2Y/byCNQ$lE1kyibcpw+akmm7oNSmkk5UJdnPH9Wko7rXgFP252M"
+  },
+  {
+    "email": "girozywu@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$AFvUY6/u8mBBrv2fZFPq1A$SEJQd/E+CLAv8QKm7yXRX3MpKxsNwNThuIlanl3XQ1E"
+  },
+  {
+    "email": "guviru@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$qWQyKzSFFTPzMnfQty7F9g$So7kV5rOgf5/1LlEkieFXkxyeZQ7hMH3Ht1oxyVdUWk"
+  },
+  {
+    "email": "jelor44662@lasttea.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$OLiUIOYnxoa5TAVKW3h9lQ$qTpl7hjd3RdZG2FHg3DcAw0fGXwmYIxsD9pKFH8pMw0"
+  },
+  {
+    "email": "cexaxac994@gicont.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$Uh8ufoqYUWHyoX5a2ZTwVQ$+d7hluggP5ihiVUOLz5FnT0aTPQq9Lad0GINlxUkIOY"
+  },
+  {
+    "email": "caxet80850@gicont.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$wN+pLEPANH7JlT3fIqkc0A$V7nmmjOu8moBFXVlK6fvxiXl+6ZAaRrL+9A76uoDf+o"
+  }
+]

@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 
 const LoginForm = () => {
-  const { register, handleSubmit } = useForm();
+  const {  handleSubmit } = useForm();
 
   return (
     <>
