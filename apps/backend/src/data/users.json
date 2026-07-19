@@ -38,5 +38,9 @@
   {
     "email": "caxet80850@gicont.com",
     "password": "$argon2id$v=19$m=65536,t=3,p=4$wN+pLEPANH7JlT3fIqkc0A$V7nmmjOu8moBFXVlK6fvxiXl+6ZAaRrL+9A76uoDf+o"
+  },
+  {
+    "email": "qehazekevu@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$cHRM6hUBjYHLH+vCzKQ91Q$zmPPhBqaA7N9r3OFQYzQG7tS2ggrp1IuAwLk5DZ9dZI"
   }
 ]
