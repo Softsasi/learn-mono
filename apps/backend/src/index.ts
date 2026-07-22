@@ -1,25 +1,17 @@
-import dotenv from 'dotenv';
-dotenv.config()
 
-import cors from 'cors';
-import express from 'express';
-import { registerController } from './controllers/auth/register.controller.js';
-import { todosController } from './controllers/todos/todos.controller.js';
-import { transporter } from './lib/nodemailer.js';
-const app = express();
-const port = 8080;
-console.log("transporter", transporter);
+import http from 'http';
+import { app } from './app.js';
 
-app.use(express.json());
-app.use(cors());
+const port = process.env.PORT || 8080;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+const server = http.createServer(app);
+
+
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
-app.get('/todos',todosController);
-app.post('/register', registerController);
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+server.on('error', (error) => {
+  console.error('Error occurred:', error);
+  process.exit(1);
 });

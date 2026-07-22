@@ -42,5 +42,13 @@
   {
     "email": "qehazekevu@example.com",
     "password": "$argon2id$v=19$m=65536,t=3,p=4$cHRM6hUBjYHLH+vCzKQ91Q$zmPPhBqaA7N9r3OFQYzQG7tS2ggrp1IuAwLk5DZ9dZI"
+  },
+  {
+    "email": "zutuf@example.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$NwszW7blw3cQjHCU0KzV1w$VwQY7qPlIabJQ6JLGKxNF3tCN1wB+YdM9tBdtG/0ID8"
+  },
+  {
+    "email": "kdpt.anzim0@gmail.com",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$Td/aaBsoXelvlmL9K4N2xg$zlEcq0k4JhQk+lIH90N7wAx0HW+Z0fpZ5da3thw5h8I"
   }
 ]
