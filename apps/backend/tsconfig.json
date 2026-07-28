@@ -14,7 +14,33 @@
     "skipLibCheck": true,
 
     "sourceMap": true,
-    "types": ["node"]
+    "types": ["node"],
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@services/*": ["./src/services/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@config/*": ["./src/config/*"],
+      "@models/*": ["./src/models/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@middlewares/*": ["./src/middlewares/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@repositories/*": ["./src/repositories/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@decorators/*": ["./src/decorators/*"],
+      "@validators/*": ["./src/validators/*"],
+      "@events/*": ["./src/events/*"],
+      "@jobs/*": ["./src/jobs/*"],
+      "@emails/*": ["./src/emails/*"],
+      "@sockets/*": ["./src/sockets/*"],
+      "@graphql/*": ["./src/graphql/*"],
+      "@tests/*": ["./src/tests/*"]
+    }
+
+
+
   },
   "include": ["src"]
 }

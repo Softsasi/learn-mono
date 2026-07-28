@@ -1,5 +1,5 @@
+import { USERS_FILE } from '@/constant.js';
 import fs from 'node:fs';
-import { USERS_FILE } from '../../constant.js';
 
 export const users: { email: string; password: string; id: number }[] = JSON.parse(
     fs.readFileSync(USERS_FILE, 'utf8')

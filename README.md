@@ -1,4 +1,4 @@
-# My App Monorepo
+# Blog App
 
 A pnpm monorepo with Express backend and React frontend.
 
