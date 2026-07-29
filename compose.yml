@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:17
-    container_name: blog_postgres
+    container_name: d
 
     restart: unless-stopped
 
