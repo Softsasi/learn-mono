@@ -51,8 +51,11 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  verfication_token: 'verfication_token',
+  login_history: 'login_history',
+  Auth: 'Auth',
   User: 'User',
-  Post: 'Post'
+  user_link: 'user_link'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -71,25 +74,77 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const UserScalarFieldEnum = {
+export const Verfication_tokenScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  status: 'status',
+  type: 'type',
+  issuse_at: 'issuse_at',
+  authId: 'authId',
+  expires_at: 'expires_at',
+  created_at: 'created_at'
+} as const
+
+export type Verfication_tokenScalarFieldEnum = (typeof Verfication_tokenScalarFieldEnum)[keyof typeof Verfication_tokenScalarFieldEnum]
+
+
+export const Login_historyScalarFieldEnum = {
+  id: 'id',
+  authId: 'authId',
+  ip_address: 'ip_address',
+  user_agent: 'user_agent',
+  location: 'location',
+  login_time: 'login_time',
+  login_attempt: 'login_attempt',
+  created_at: 'created_at'
+} as const
+
+export type Login_historyScalarFieldEnum = (typeof Login_historyScalarFieldEnum)[keyof typeof Login_historyScalarFieldEnum]
+
+
+export const AuthScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  name: 'name',
-  age: 'age'
+  user_name: 'user_name',
+  password: 'password',
+  status: 'status',
+  role: 'role',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type AuthScalarFieldEnum = (typeof AuthScalarFieldEnum)[keyof typeof AuthScalarFieldEnum]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  authId: 'authId',
+  first_name: 'first_name',
+  last_name: 'last_name',
+  display_name: 'display_name',
+  phone_number: 'phone_number',
+  bio: 'bio',
+  avatar_url: 'avatar_url',
+  cover_url: 'cover_url',
+  address: 'address',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-export const PostScalarFieldEnum = {
+export const User_linkScalarFieldEnum = {
   id: 'id',
-  title: 'title',
-  content: 'content',
-  published: 'published',
-  authorId: 'authorId'
+  userId: 'userId',
+  platform: 'platform',
+  url: 'url',
+  order: 'order',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
-export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
+export type User_linkScalarFieldEnum = (typeof User_linkScalarFieldEnum)[keyof typeof User_linkScalarFieldEnum]
 
 
 export const SortOrder = {

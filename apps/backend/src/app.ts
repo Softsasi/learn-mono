@@ -1,11 +1,11 @@
 import dotenv from 'dotenv';
 dotenv.config()
 
-import cors from 'cors';
-  import express from 'express';
-  import { registerController } from '@/controllers/auth/register.controller.js';
+import { registerController } from '@/controllers/auth/register.controller.js';
 import { todosController } from '@/controllers/todos/todos.controller.js';
-import { result } from './lib/db/index.js';
+import cors from 'cors';
+import express from 'express';
+
 
 
 
@@ -21,6 +21,5 @@ app.get('/', (req, res) => {
 app.get('/todos',todosController);
 app.post('/register', registerController);
 
-console.log("==============", result.rows, "==============");
 
 export { app };

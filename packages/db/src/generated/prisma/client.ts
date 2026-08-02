@@ -31,8 +31,8 @@ export * from "./enums.js"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Users
- * const users = await prisma.user.findMany()
+ * // Fetch zero or more Verfication_tokens
+ * const verfication_tokens = await prisma.verfication_token.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -42,12 +42,27 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
+ * Model verfication_token
+ * 
+ */
+export type verfication_token = Prisma.verfication_tokenModel
+/**
+ * Model login_history
+ * 
+ */
+export type login_history = Prisma.login_historyModel
+/**
+ * Model Auth
+ * 
+ */
+export type Auth = Prisma.AuthModel
+/**
  * Model User
  * 
  */
 export type User = Prisma.UserModel
 /**
- * Model Post
+ * Model user_link
  * 
  */
-export type Post = Prisma.PostModel
+export type user_link = Prisma.user_linkModel

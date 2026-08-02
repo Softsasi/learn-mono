@@ -16,6 +16,7 @@ export const registerService = async ({ email, password }: { email: string; pass
 
   const hashedPassword = await argon2.hash(password);
 
+
    await authRepository.createUser(modifiedEmail, hashedPassword);
 
     await sendEmail({

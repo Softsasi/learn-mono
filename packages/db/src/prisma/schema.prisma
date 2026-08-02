@@ -1,0 +1,106 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Status {
+  PENDING
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum Role {
+  USER
+  ADMIN
+  MODERATOR
+}
+
+enum VerificationTokenStatus {
+  PENDING
+  VERIFIED
+  EXPIRED
+}
+
+enum VerificationTokenType {
+  EMAIL_VERIFICATION
+  PASSWORD_RESET
+  ACCOUNT_ACTIVATION
+  TWO_FACTOR_AUTHENTICATION
+}
+
+model verfication_token {
+  id        String                  @id @default(uuid())
+  code      String
+  status    VerificationTokenStatus @default(PENDING)
+  type      VerificationTokenType   @default(EMAIL_VERIFICATION)
+  issuse_at DateTime                @default(now())
+  authId    String
+  auth      Auth                    @relation(fields: [authId], references: [id])
+
+  expires_at DateTime
+  created_at DateTime @default(now())
+}
+
+model login_history {
+  id     String @id @default(uuid())
+  authId String
+  auth   Auth   @relation(fields: [authId], references: [id])
+
+  ip_address    String
+  user_agent    String
+  location      String?
+  login_time    DateTime @default(now())
+  login_attempt Int?
+  created_at    DateTime @default(now())
+}
+
+model Auth {
+  id                 String              @id @default(uuid())
+  email              String              @unique
+  user_name          String              @unique
+  password           String
+  status             Status              @default(PENDING)
+  role               Role                @default(USER)
+  created_at         DateTime            @default(now())
+  updated_at         DateTime            @updatedAt
+  user               User?
+  verfication_tokens verfication_token[]
+  login_histories    login_history[]
+}
+
+model User {
+  id String @id @default(uuid())
+
+  authId String @unique
+  auth   Auth   @relation(fields: [authId], references: [id])
+
+  first_name   String
+  last_name    String
+  display_name String
+  phone_number String?
+  bio          String?
+  avatar_url   String?
+  cover_url    String?
+  address      String?
+  links        user_link[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model user_link {
+  id       String @id @default(uuid())
+  userId   String
+  user     User   @relation(fields: [userId], references: [id])
+  platform String
+  url      String
+  order    Int
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
