@@ -1,0 +1,33 @@
+{
+  "name": "blog_backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "nextrush dev",
+    "build": "nextrush build",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@nextrush/body-parser": "^4.0.0",
+    "@nextrush/cors": "^4.0.0",
+    "@nextrush/helmet": "^4.0.0",
+    "@quill/db": "workspace:*",
+    "argon2": "^0.44.0",
+    "dotenv": "^17.4.2",
+    "nextrush": "^4.0.1",
+    "nodemailer": "^9.0.3"
+  },
+  "devDependencies": {
+    "@nextrush/dev": "^1.1.1",
+    "@nextrush/types": "^4.0.1",
+    "@types/node": "^22.0.0",
+    "@types/nodemailer": "^8.0.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}

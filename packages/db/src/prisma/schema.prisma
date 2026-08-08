@@ -74,14 +74,12 @@ model Auth {
 }
 
 model User {
-  id String @id @default(uuid())
-
-  authId String @unique
-  auth   Auth   @relation(fields: [authId], references: [id])
+  id   String @id
+  auth Auth   @relation(fields: [id], references: [id])
 
   first_name   String
   last_name    String
-  display_name String
+  display_name String?
   phone_number String?
   bio          String?
   avatar_url   String?

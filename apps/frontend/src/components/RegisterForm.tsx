@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 type RegisterFormData = {
   email: string;
   password: string;
+  first_name: string;
+  last_name: string;
 };
 
 const RegisterForm = () => {
@@ -24,7 +26,7 @@ const RegisterForm = () => {
     setSuccessMessage('');
 
     try {
-      const response = await fetch(`${reactAppUrl}/register`, {
+      const response = await fetch(`${reactAppUrl}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,6 +38,10 @@ const RegisterForm = () => {
 
       if (!response.ok) {
         throw new Error(result.message || 'Registration failed');
+      }
+
+      if (result.result.status === 400) {
+        throw new Error(result.error || 'Email already exists');
       }
 
       setSuccessMessage(result.message);
@@ -73,6 +79,67 @@ const RegisterForm = () => {
         className="flex flex-col gap-4"
         onSubmit={handleSubmit(onSubmit)}
       >
+
+         {/* First_name */}
+        <div className="flex flex-col gap-2">
+          <label htmlFor="first_name">First Name</label>
+
+          <input
+            id="first_name"
+            type="text"
+            className="border border-gray-300 rounded-md p-2"
+            placeholder="Enter your first name"
+            {...register('first_name', {
+              required: 'First name is required',
+              minLength: {
+                value: 2,
+                message: 'First name must be at least 2 characters',
+              },
+              maxLength: {
+                value: 30,
+                message: 'First name cannot exceed 30 characters',
+              },
+            })}
+          />
+
+          {errors.first_name && (
+            <p className="text-sm text-red-500">
+              {errors.first_name.message}
+            </p>
+          )}
+        </div>
+
+        {/* Last_name */}
+        <div className="flex flex-col gap-2">
+          <label htmlFor="last_name">Last Name</label>
+
+          <input
+            id="last_name"
+            type="text"
+            className="border border-gray-300 rounded-md p-2"
+            placeholder="Enter your last name"
+            {...register('last_name', {
+              required: 'Last name is required',
+              minLength: {
+                value: 2,
+                message: 'Last name must be at least 2 characters',
+              },
+              maxLength: {
+                value: 30,
+                message: 'Last name cannot exceed 30 characters',
+              },
+            })}
+          />
+
+          {errors.last_name && (
+            <p className="text-sm text-red-500">
+              {errors.last_name.message}
+            </p>
+          )}
+        </div>
+
+
+
         {/* Email */}
         <div className="flex flex-col gap-2">
           <label htmlFor="email">Email</label>

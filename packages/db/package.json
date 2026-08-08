@@ -1,5 +1,6 @@
 {
   "name": "@quill/db",
+  "version": "0.0.2",
   "private": true,
   "type": "module",
   "types": "./dist/index.d.mts",
@@ -15,7 +16,7 @@
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf dist",
-    "db:generate": "prisma generate",
+    "db:generate": "prisma generate && tsdown",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
     "db:reset": "prisma migrate reset",

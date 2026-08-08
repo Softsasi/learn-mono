@@ -874,7 +874,6 @@ export type AuthScalarFieldEnum = (typeof AuthScalarFieldEnum)[keyof typeof Auth
 
 export const UserScalarFieldEnum = {
   id: 'id',
-  authId: 'authId',
   first_name: 'first_name',
   last_name: 'last_name',
   display_name: 'display_name',
